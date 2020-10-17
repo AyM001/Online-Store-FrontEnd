@@ -6,8 +6,8 @@
         <th class="align-middle" scope="col">#</th>
         <th class="align-middle" scope="col">Email</th>
         <th class="align-middle" scope="col">Password</th>
-        <th class="align-middle" scope="col">logo</th>
-        <th class="align-middle" scope="col">channel</th>
+        <th class="align-middle" scope="col">Logo</th>
+        <th class="align-middle" scope="col">Channel</th>
         <th class="align-middle" scope="col">
           <div class="row d-flex align-items-center">
             <div class="col">
@@ -24,7 +24,9 @@
       <tr *ngFor="let user of users">
         <td>{{ user.id }}</td>
         <td>{{ user.email }}</td>
-        <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.logo }}</td>
+        <td>{{ user.channel }}</td>
         <td>
           <div class="btn-group">
             <button (click)="editUser(user.id)" class="btn btn-primary mx-1">Edit</button>

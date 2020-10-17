@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../model/user";
-import {UserService} from "../../service/user.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {User} from '../../model/user';
+import {UserService} from '../../service/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-user-add',
@@ -24,7 +25,7 @@ export class UserAddComponent {
 
   // tslint:disable-next-line:typedef
   goToUserList() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/getUsers']);
   }
 
 

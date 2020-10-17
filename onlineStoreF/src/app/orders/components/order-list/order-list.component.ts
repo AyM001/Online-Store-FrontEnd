@@ -18,9 +18,9 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   /*
   getOrders(){
     this.orderService.getByUsername()
   }*/
+
 }

@@ -2,7 +2,7 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userAdd="ngForm">
       <div class="form-group">
-        <label for="email">email</label>
+        <label for="email">Email</label>
         <input type="text" [(ngModel)]="user.email"
                class="form-control"
                id="email"
@@ -21,6 +21,27 @@
                required #password="ngModel">
         <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
       </div>
+      <div class="form-group">
+        <label for="logo">Logo</label>
+        <input type="text" [(ngModel)]="user.logo"
+               class="form-control"
+               id="logo"
+               name="logo"
+               placeholder="Enter your logo"
+               required #logo="ngModel">
+        <div [hidden]="!logo.pristine" class="alert alert-danger">Logo is required</div>
+      </div>
+      <div class="form-group">
+        <label for="channel">Channel</label>
+        <input type="text" [(ngModel)]="user.channel"
+               class="form-control"
+               id="channel"
+               name="channel"
+               placeholder="Enter your channel"
+               required #channel="ngModel">
+        <div [hidden]="!channel.pristine" class="alert alert-danger">Channel is required</div>
+      </div>
+
       <div class="btn-group">
         <a (click)="goToUserList()"
            class="btn btn-secondary mx-1">Back
