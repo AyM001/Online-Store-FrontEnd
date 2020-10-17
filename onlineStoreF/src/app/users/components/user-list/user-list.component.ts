@@ -3,8 +3,7 @@ import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
-class NgbModal {
-}
+
 
 @Component({
   selector: 'app-user-list',
@@ -17,7 +16,7 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService,
               private route: ActivatedRoute,
               private router: Router,
-              private modalService: NgbModal) {
+              ) {
   }
 
   ngOnInit(): void {

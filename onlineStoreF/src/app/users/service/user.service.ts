@@ -7,34 +7,32 @@ import {User} from '../model/user';
   providedIn: 'root'
 })
 export class UserService {
-  private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/users';
   }
 
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+    return this.http.get<User[]>('http://localhost:8080/getUsers');
   }
 
   // tslint:disable-next-line:typedef
   public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>('http://localhost:8080/addUser', user);
   }
 
   // tslint:disable-next-line:typedef
   public delete(id: number) {
-    return this.http.delete(`${this.usersUrl}/${id}`);
+    return this.http.delete(`${'http://localhost:8080/deleteUser'}/${id}`);
   }
 
   // tslint:disable-next-line:typedef
   public update(user: User) {
-    return this.http.put<User>(this.usersUrl, user);
+    return this.http.put<User>('http://localhost:8080/updateUser', user);
   }
 
   // tslint:disable-next-line:typedef
   public getById(id: number): Observable<any> {
-    return this.http.get(`${this.usersUrl}/${id}`);
+    return this.http.get(`${'http://localhost:8080/getUserById'}/${id}`);
   }
 
 }

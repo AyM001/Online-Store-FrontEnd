@@ -29,12 +29,12 @@ export class UserEditComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   goToUserList() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/getUsers']);
   }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.goToUserList());
+    this.userService.update(this.user).subscribe(result => this.goToUserList());
   }
 
 }

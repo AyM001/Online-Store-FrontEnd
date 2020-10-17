@@ -24,7 +24,7 @@ export class UserAddComponent {
 
   // tslint:disable-next-line:typedef
   goToUserList() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/getUsers']);
   }
 
 
