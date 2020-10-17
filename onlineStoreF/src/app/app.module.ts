@@ -7,6 +7,11 @@ import {UserListComponent} from './users/components/user-list/user-list.componen
 import {UserAddComponent} from './users/components/user-add/user-add.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ManufacturerListComponent } from './manufacturers/components/manufacturer-list/manufacturer-list.component';
+import { ProductFormComponent } from './products/components/product-form/product-form.component';
+import { ProductEditComponent } from './products/components/product-edit/product-edit.component';
+import { ManufacturerFormComponent } from './manufacturers/components/manufacturer-form/manufacturer-form.component';
+import { ManufacturerEditComponent } from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 import {UserEditComponent} from './users/components/user-edit/user-edit.component';
 import {OrderListComponent} from './orders/components/order-list/order-list.component';
 import {ProductListComponent} from './products/components/product-list/product-list.component';
@@ -14,9 +19,16 @@ import {ProductServiceService} from './products/service/product-service.service'
 import {UserService} from './users/service/user.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    ProductListComponent,
+    ManufacturerListComponent,
+    ProductFormComponent,
+    ProductEditComponent,
+    ManufacturerFormComponent,
+    ManufacturerEditComponent,
     UserListComponent,
     UserAddComponent,
     UserEditComponent,
