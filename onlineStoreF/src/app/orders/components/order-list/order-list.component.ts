@@ -35,10 +35,12 @@ export class OrderListComponent implements OnInit {
     });
   }
 
+
 // tslint:disable-next-line:typedef
   deleteOrderById(id: number) {
     this.orderService.delete(id).subscribe(data => {
       this.getOrders();
     });
+
   }
 }
