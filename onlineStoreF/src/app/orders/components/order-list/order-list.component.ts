@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OrderService} from '../../service/order.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Order} from '../../model/order';
@@ -13,12 +13,14 @@ export class OrderListComponent implements OnInit {
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  /*
   getOrders(){
     this.orderService.getByUsername()
-  }
+  }*/
 }

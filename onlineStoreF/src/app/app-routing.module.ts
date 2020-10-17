@@ -7,12 +7,16 @@ import {ProductListComponent} from './products/components/product-list/product-l
 import {ManufacturerListComponent} from './manufacturers/components/manufacturer-list/manufacturer-list.component';
 import {ProductFormComponent} from './products/components/product-form/product-form.component';
 import {ProductEditComponent} from './products/components/product-edit/product-edit.component';
+import {ManufacturerFormComponent} from './manufacturers/components/manufacturer-form/manufacturer-form.component';
+import {ManufacturerEditComponent} from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 
 
 const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'getManufacturers', component: ManufacturerListComponent},
   {path: 'addProducts', component: ProductFormComponent},
+  {path: 'addManufacturers', component: ManufacturerFormComponent},
   {path: 'editProducts/:id', component: ProductEditComponent},
+  {path: 'editManufacturers/:id', component: ManufacturerEditComponent},
   {path: 'users', component: UserListComponent},
   {path: 'addUser', component: UserAddComponent},
   {path: 'editUser/:id', component: UserEditComponent}];
