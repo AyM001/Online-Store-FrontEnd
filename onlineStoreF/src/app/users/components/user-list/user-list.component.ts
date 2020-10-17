@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../../model/user";
-import {UserService} from "../../service/user.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {User} from '../../model/user';
+import {UserService} from '../../service/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 class NgbModal {
 }
@@ -43,7 +43,7 @@ export class UserListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   deleteUser(id: number){
-    this.userService.delete(id).subscribe(data =>{this.getUsers(); });
+    this.userService.delete(id).subscribe(data => {this.getUsers(); });
   }
 
 }
