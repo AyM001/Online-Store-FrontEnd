@@ -19,6 +19,6 @@ export class OrderListComponent implements OnInit {
   }
 
   getOrders(){
-    this.orderService
+    this.orderService.getByUsername()
   }
 }
