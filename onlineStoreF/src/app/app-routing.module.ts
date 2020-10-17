@@ -11,13 +11,17 @@ import {OrderFormComponent} from './orders/components/order-form/order-form.comp
 import {ManufacturerListComponent} from './manufacturers/components/manufacturer-list/manufacturer-list.component';
 import {ProductFormComponent} from './products/components/product-form/product-form.component';
 import {ProductEditComponent} from './products/components/product-edit/product-edit.component';
+import {ManufacturerFormComponent} from './manufacturers/components/manufacturer-form/manufacturer-form.component';
+import {ManufacturerEditComponent} from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 
 
 
 const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'getManufacturers', component: ManufacturerListComponent},
   {path: 'addProducts', component: ProductFormComponent},
+  {path: 'addManufacturers', component: ManufacturerFormComponent},
   {path: 'editProducts/:id', component: ProductEditComponent},
+  {path: 'editManufacturers/:id', component: ManufacturerEditComponent},
   {path: 'getUsers', component: UserListComponent},
   {path: 'addUser', component: UserAddComponent},
 
@@ -27,7 +31,7 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'addOrder', component: OrderFormComponent}
 ];
 
-  
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OrderService} from '../../service/order.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Order} from '../../model/order';
@@ -28,6 +28,7 @@ export class OrderListComponent implements OnInit {
     });
   }
 
+
   // tslint:disable-next-line:typedef
   getOrders() {
     this.orderService.getOrders().subscribe(data => {
@@ -43,4 +44,5 @@ export class OrderListComponent implements OnInit {
     });
 
   }
+
 }
