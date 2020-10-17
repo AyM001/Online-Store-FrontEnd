@@ -18,7 +18,8 @@ export class OrderListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getOrders(){
+ /* getOrders(){
     this.orderService.getByUsername()
   }
+  */
 }

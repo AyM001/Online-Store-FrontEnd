@@ -12,6 +12,7 @@ import {OrderListComponent} from './orders/components/order-list/order-list.comp
 import {ProductListComponent} from './products/components/product-list/product-list.component';
 import {ProductServiceService} from './products/service/product-service.service';
 import {UserService} from './users/service/user.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {UserService} from './users/service/user.service';
     AppRoutingModule,
     NoopAnimationsModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [ProductServiceService, UserService],
   bootstrap: [AppComponent]
