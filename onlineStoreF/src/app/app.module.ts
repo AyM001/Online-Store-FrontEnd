@@ -12,6 +12,8 @@ import {OrderListComponent} from './orders/components/order-list/order-list.comp
 import {ProductListComponent} from './products/components/product-list/product-list.component';
 import {ProductServiceService} from './products/service/product-service.service';
 import {UserService} from './users/service/user.service';
+import {OrderService} from './orders/service/order.service';
+import { OrderFormComponent } from './orders/components/order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {UserService} from './users/service/user.service';
     UserAddComponent,
     UserEditComponent,
     OrderListComponent,
-    ProductListComponent
+    ProductListComponent,
+    OrderFormComponent
   ],
   imports: [
     HttpClientModule,
@@ -29,7 +32,7 @@ import {UserService} from './users/service/user.service';
     NoopAnimationsModule,
     FormsModule,
   ],
-  providers: [ProductServiceService, UserService],
+  providers: [ProductServiceService, UserService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

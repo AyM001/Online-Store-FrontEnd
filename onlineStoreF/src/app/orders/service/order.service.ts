@@ -15,7 +15,7 @@ export class OrderService {
   }
 
   public addOrder(order: Order): Observable<any>{
-    return this.http.post<any>('http://localhost:8080/ addOrder', order);
+    return this.http.post<any>('http://localhost:8080/addOrder', order);
   }
 
   public delete(idOrder: number): Observable<any>
@@ -36,7 +36,7 @@ export class OrderService {
 
 
   public getByUsername(username: string): Observable<any> {
-    return this.http.get('http://localhost:8080/orders/getByUsername/' + username);
+    return this.http.get<Order>('http://localhost:8080/orders/getByUsername/' + username);
   }
 
 

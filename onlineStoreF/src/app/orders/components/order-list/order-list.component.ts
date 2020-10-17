@@ -10,15 +10,35 @@ import {Order} from '../../model/order';
 })
 export class OrderListComponent implements OnInit {
   orders: Order[];
+  order: Order;
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
-              private router: Router) { }
-
-  ngOnInit(): void {
+              private router: Router) {
   }
 
-  getOrders(){
-    this.orderService.getByUsername()
+  ngOnInit(): void {
+    this.getOrderByUsername('iulia');
+  }
+
+  // tslint:disable-next-line:typedef
+  getOrderByUsername(username: string) {
+    this.orderService.getByUsername(username).subscribe(data => {
+      this.order = data;
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  getOrders() {
+    this.orderService.getOrders().subscribe(data => {
+      this.orders = data;
+    });
+  }
+
+// tslint:disable-next-line:typedef
+  deleteOrderById(id: number) {
+    this.orderService.delete(id).subscribe(data => {
+      this.getOrders();
+    });
   }
 }
