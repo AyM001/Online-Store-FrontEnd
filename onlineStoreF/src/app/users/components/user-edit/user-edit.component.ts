@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Address} from "../../model/address";
 
 
 @Component({
@@ -11,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
   user: User;
+  address: Address;
   id: number;
 
   constructor(private userService: UserService,
@@ -21,6 +23,8 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = new User();
+    this.address = new Address();
+    this.user.addressDto = this.address;
     this.id = this.route.snapshot.params.id;
     this.userService.getById(this.id).subscribe(data => {
       this.user = data;
