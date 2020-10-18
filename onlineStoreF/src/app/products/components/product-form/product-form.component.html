@@ -40,7 +40,21 @@
         </ng-multiselect-dropdown>
       </div>
 
-      "category from tony"
+      <div class="form-group">
+        <label for="categories">Category</label>
+        <ng-multiselect-dropdown
+          [data]="categories"
+          [placeholder]="'Select the Category'"
+          id="categories"
+          [(ngModel)]="selectedCategories"
+          [ngModelOptions]="{standalone: true}"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+        >
+          <div [hidden]="" class="alert alert-danger">Category is required</div>
+        </ng-multiselect-dropdown>
+      </div>
 
       <button (click)="goToProductList()"
               class="btn btn-secondary mx-1">Back
