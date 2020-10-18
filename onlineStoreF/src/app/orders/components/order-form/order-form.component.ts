@@ -20,16 +20,5 @@ export class OrderFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  onSubmit(){
-    this.orderService.addOrder(this.order).subscribe(result => {
-      this.goToOrderList();
-    });
-  }
-
-  // tslint:disable-next-line:typedef
-  goToOrderList() {
-    this.router.navigate(['/getOrders']);
-  }
 
 }
