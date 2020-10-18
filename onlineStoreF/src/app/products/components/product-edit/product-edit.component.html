@@ -1,1 +1,55 @@
-<p>product-edit works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #productEdit="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="product.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter product name"
+               required #name="ngModel"></div>
+      <div [hidden]="name.valid" class="alert alert-danger">Product name is required</div>
+
+
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="text" [(ngModel)]="product.price"
+                     class="form-control"
+                     id="price"
+                     name="price"
+                     placeholder="Enter product price"
+                     required #price="ngModel"></div>
+            <div [hidden]="price.valid" class="alert alert-danger">Product price is required</div>
+
+      <div class="form-group">
+
+        <label for="manufacturers">Manufacturers</label>
+        <ng-multiselect-dropdown
+          [data]="manufacturers"
+          [placeholder]="'Select the Manufacturer'"
+          id="manufacturers"
+          [(ngModel)]="selectedManufacturers"
+          [ngModelOptions]="{standalone: true}"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+        >
+
+        </ng-multiselect-dropdown>
+      </div>
+      <div [hidden]="" class="alert alert-danger">Manufacturer is required</div>
+
+
+      <div class="btn-group">
+        <a (click)="goToProductList()"
+           class="btn btn-secondary mx-1">Back
+        </a>
+        <button type="submit" [disabled]="!productEdit.form.valid"
+                class="btn btn-info">Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

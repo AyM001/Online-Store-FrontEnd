@@ -7,11 +7,11 @@ import {UserListComponent} from './users/components/user-list/user-list.componen
 import {UserAddComponent} from './users/components/user-add/user-add.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { ManufacturerListComponent } from './manufacturers/components/manufacturer-list/manufacturer-list.component';
-import { ProductFormComponent } from './products/components/product-form/product-form.component';
-import { ProductEditComponent } from './products/components/product-edit/product-edit.component';
-import { ManufacturerFormComponent } from './manufacturers/components/manufacturer-form/manufacturer-form.component';
-import { ManufacturerEditComponent } from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
+import {ManufacturerListComponent} from './manufacturers/components/manufacturer-list/manufacturer-list.component';
+import {ProductFormComponent} from './products/components/product-form/product-form.component';
+import {ProductEditComponent} from './products/components/product-edit/product-edit.component';
+import {ManufacturerFormComponent} from './manufacturers/components/manufacturer-form/manufacturer-form.component';
+import {ManufacturerEditComponent} from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 import {UserEditComponent} from './users/components/user-edit/user-edit.component';
 import {OrderListComponent} from './orders/components/order-list/order-list.component';
 import {ProductListComponent} from './products/components/product-list/product-list.component';
@@ -19,14 +19,17 @@ import {ProductServiceService} from './products/service/product-service.service'
 import {UserService} from './users/service/user.service';
 
 import {OrderService} from './orders/service/order.service';
-import { OrderFormComponent } from './orders/components/order-form/order-form.component';
+import {OrderFormComponent} from './orders/components/order-form/order-form.component';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CategoryListComponent } from './categories/components/category-list/category-list.component';
-import { CategoryAddComponent } from './categories/components/category-add/category-add.component';
+
+import {CategoryListComponent} from './categories/components/category-list/category-list.component';
+import {CategoryAddComponent} from './categories/components/category-add/category-add.component';
 import {CategoryService} from './categories/service/category.service';
-import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 
+import {ManufacturerServiceService} from './manufacturers/service/manufacturer-service.service';
+
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -56,7 +59,7 @@ import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
     NgbModule,
     NgMultiSelectDropDownModule,
   ],
-  providers: [ProductServiceService, UserService, OrderService, CategoryService],
+  providers: [ProductServiceService, UserService, OrderService, ManufacturerServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

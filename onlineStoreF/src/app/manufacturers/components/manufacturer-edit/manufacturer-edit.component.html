@@ -1,1 +1,24 @@
-<p>manufacturer-edit works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #manufacturerEdit="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="manufacturer.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter flight name"
+               required #name="ngModel"></div>
+      <div [hidden]="name.valid" class="alert alert-danger">Manufacturer name is required</div>
+
+      <div class="btn-group">
+        <a (click)="goToManufacturerList()"
+           class="btn btn-secondary mx-1">Back
+        </a>
+        <button type="submit" [disabled]="!manufacturerEdit.form.valid"
+                class="btn btn-info">Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

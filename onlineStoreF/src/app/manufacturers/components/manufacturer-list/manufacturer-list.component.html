@@ -1,1 +1,32 @@
-<p>manufacturer-list works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <h1>Manufacturers</h1>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th class="align-middle" scope="col">#Id</th>
+        <th class="align-middle" scope="col">Name</th>
+
+        <th>
+          <button (click)="addManufacturer()" class="btn btn-success">Add+
+          </button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let manufacturer of manufacturers">
+        <td>{{ (manufacturers.indexOf(manufacturer)+1)}}</td>
+        <td>{{ manufacturer.name }}</td>
+        <td>
+          <div class=" btn-group">
+            <button (click)="editManufacturer(manufacturer.id)" class="btn btn-outline-primary mx-1">Edit</button>
+            <button (click)="deleteManufacturer(manufacturer.id)" class="btn btn-outline-danger">Delete</button>
+
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
