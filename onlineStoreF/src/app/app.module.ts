@@ -25,7 +25,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CategoryListComponent } from './categories/components/category-list/category-list.component';
 import { CategoryAddComponent } from './categories/components/category-add/category-add.component';
 import {CategoryService} from './categories/service/category.service';
-import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 
 
 
