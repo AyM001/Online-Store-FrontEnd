@@ -59,7 +59,7 @@ import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     NgMultiSelectDropDownModule,
   ],
-  providers: [ProductServiceService, UserService, OrderService, ManufacturerServiceService],
+  providers: [ProductServiceService, UserService, OrderService, ManufacturerServiceService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
