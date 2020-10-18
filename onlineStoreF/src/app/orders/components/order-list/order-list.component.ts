@@ -38,8 +38,8 @@ export class OrderListComponent implements OnInit {
 
 
 // tslint:disable-next-line:typedef
-  deleteOrderById(id: number) {
-    this.orderService.delete(id).subscribe(data => {
+  public update(username: string, idOrderLine: number, newQuantity: number ) {
+    this.orderService.update(username, idOrderLine , newQuantity ).subscribe(data => {
       this.getOrders();
     });
 

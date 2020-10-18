@@ -14,8 +14,8 @@ export class OrderService {
     return this.http.get<Order[]>('http://localhost:8080/getOrders');
   }
 
-  public addOrder(order: Order): Observable<any>{
-    return this.http.post<any>('http://localhost:8080/addOrder', order);
+  public addOrder(username: string, idProduct: number): Observable<Order>{
+    return this.http.get<Order>('http://localhost:8080/addOrder/' + username + '/' + idProduct);
   }
 
   public delete(idOrder: number): Observable<any>
@@ -25,8 +25,8 @@ export class OrderService {
   }
 
   // tslint:disable-next-line:typedef
-  public update(order: Order) {
-    return this.http.put<Order>('http://localhost:8080/updateOrder', order);
+  public update(username: string, idOrderLine: number, newQuantity: number ): Observable<Order> {
+    return this.http.get<Order>('http://localhost:8080/updateOrder/' + username + '/' + idOrderLine + '/' + newQuantity);
   }
 
   public getById(idOrder: number): Observable<any> {
