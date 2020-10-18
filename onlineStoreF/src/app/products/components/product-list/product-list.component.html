@@ -1,1 +1,36 @@
-<p>product-list works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <h1>Products</h1>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th class="align-middle" scope="col">#Id</th>
+        <th class="align-middle" scope="col">Name</th>
+        <th class="align-middle" scope="col">Price</th>
+        <th class="align-middle" scope="col">Manufacturer</th>
+        <th class="align-middle" scope="col">Category</th>
+        <th>
+          <button (click)="addProduct()" class="btn btn-success">Add+
+          </button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+      <td>{{ (products.indexOf(product)+1)}}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.manufacturerDto.name }}</td>
+ <td>
+ <div class=" btn-group">
+      <button (click)="editProduct(product.id)" class="btn btn-outline-primary mx-1">Edit</button>
+      <button (click)="deleteProduct(product.id)" class="btn btn-outline-danger">Delete</button>
+
+  </div>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+
+</div>
+</div>

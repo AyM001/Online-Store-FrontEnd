@@ -17,6 +17,8 @@ export class ManufacturerFormComponent implements OnInit {
   constructor(private manufacturerService: ManufacturerServiceService,
               private router: Router,
               private route: ActivatedRoute) {
+  }
+  ngOnInit(): void {
     this.manufacturer = new Manufacturer();
   }
 
@@ -28,8 +30,5 @@ export class ManufacturerFormComponent implements OnInit {
   // tslint:disable-next-line:typedef
   goToManufacturerList() {
     this.router.navigate(['/getManufacturers']);
-  }
-
-  ngOnInit(): void {
   }
 }

@@ -4,7 +4,7 @@ export class Product {
   id: number;
   name: string;
   price: number;
-  manufacturer: Manufacturer;
+  manufacturerDto: Manufacturer;
   /*
   category:
   */
