@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {OrderService} from '../../service/order.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Order} from '../../model/order';
+import {Orderline} from '../../model/orderline';
 
 @Component({
   selector: 'app-order-list',
@@ -11,6 +12,8 @@ import {Order} from '../../model/order';
 export class OrderListComponent implements OnInit {
   orders: Order[];
   order: Order;
+  orderLines: Orderline[];
+  orderLine: Orderline;
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
@@ -38,11 +41,12 @@ export class OrderListComponent implements OnInit {
 
 
 // tslint:disable-next-line:typedef
-  public update(username: string, idOrderLine: number, newQuantity: number ) {
-    this.orderService.update(username, idOrderLine , newQuantity ).subscribe(data => {
+  public update(username: string, idOrderLine: number, newQuantity: number) {
+    this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
       this.getOrders();
     });
 
   }
 
+  // tslint:disable-next-line:typedef
 }
