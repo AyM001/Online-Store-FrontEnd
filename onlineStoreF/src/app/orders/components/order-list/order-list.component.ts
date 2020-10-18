@@ -11,7 +11,7 @@ import {Orderline} from '../../model/orderline';
 })
 export class OrderListComponent implements OnInit {
   orders: Order[] = [];
-  order: Order;
+  order: Order = new Order();
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -49,7 +49,7 @@ export class OrderListComponent implements OnInit {
   changeQuantity(orderLine: Orderline){
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
-    console.log('Change order with id' + orderLineId + 'with quantity' + newQuantity);
+    console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
     this.update('iulia', orderLineId, newQuantity);
   }
 }

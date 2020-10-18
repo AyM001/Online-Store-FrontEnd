@@ -4,6 +4,6 @@ export class Order {
 id: number;
 username: string;
 totalCost: number;
-orderLineDtoModels: Orderline[] ;
+orderLineDtoModels: Orderline[] = [] ;
 
 }
