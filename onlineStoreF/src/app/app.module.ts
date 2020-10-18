@@ -24,7 +24,8 @@ import { OrderFormComponent } from './orders/components/order-form/order-form.co
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CategoryListComponent } from './categories/components/category-list/category-list.component';
 import { CategoryAddComponent } from './categories/components/category-add/category-add.component';
-import {CategoryService} from "./categories/service/category.service";
+import {CategoryService} from './categories/service/category.service';
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 
 
 
@@ -53,6 +54,7 @@ import {CategoryService} from "./categories/service/category.service";
     NoopAnimationsModule,
     FormsModule,
     NgbModule,
+    NgMultiSelectDropDownModule,
   ],
   providers: [ProductServiceService, UserService, OrderService, CategoryService],
   bootstrap: [AppComponent]

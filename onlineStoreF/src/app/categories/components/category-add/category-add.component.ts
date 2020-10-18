@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../../service/category.service';
 import {Category} from '../../model/category';
+import {IDropdownSettings} from 'ng-multiselect-dropdown';
 
-class IDropdownSettings {
-}
 
 @Component({
   selector: 'app-category-add',

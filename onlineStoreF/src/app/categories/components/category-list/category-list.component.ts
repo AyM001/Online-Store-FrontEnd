@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../users/service/user.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {CategoryService} from "../../service/category.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategoryService} from '../../service/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-category-list',
