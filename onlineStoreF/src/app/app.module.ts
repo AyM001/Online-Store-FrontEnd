@@ -22,6 +22,9 @@ import {OrderService} from './orders/service/order.service';
 import { OrderFormComponent } from './orders/components/order-form/order-form.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CategoryListComponent } from './categories/components/category-list/category-list.component';
+import { CategoryAddComponent } from './categories/components/category-add/category-add.component';
+import {CategoryService} from "./categories/service/category.service";
 
 
 
@@ -39,7 +42,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UserEditComponent,
     OrderListComponent,
     ProductListComponent,
-    OrderFormComponent
+    OrderFormComponent,
+    CategoryListComponent,
+    CategoryAddComponent
   ],
   imports: [
     HttpClientModule,
@@ -49,7 +54,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule,
   ],
-  providers: [ProductServiceService, UserService, OrderService],
+  providers: [ProductServiceService, UserService, OrderService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
