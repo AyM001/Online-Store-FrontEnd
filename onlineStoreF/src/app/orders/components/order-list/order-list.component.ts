@@ -10,11 +10,8 @@ import {Orderline} from '../../model/orderline';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Order[];
+  orders: Order[] = [];
   order: Order;
-  orderLines: Orderline[];
-  orderLine: Orderline;
-
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -44,9 +41,15 @@ export class OrderListComponent implements OnInit {
   public update(username: string, idOrderLine: number, newQuantity: number) {
     this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
       this.getOrders();
+     // this.getOrderByUsername('iulia');
     });
 
   }
-
   // tslint:disable-next-line:typedef
+  changeQuantity(orderLine: Orderline){
+    const orderLineId = orderLine.id;
+    const newQuantity = orderLine.quantity;
+    console.log('Change order with id' + orderLineId + 'with quantity' + newQuantity);
+    this.update('iulia', orderLineId, newQuantity);
+  }
 }

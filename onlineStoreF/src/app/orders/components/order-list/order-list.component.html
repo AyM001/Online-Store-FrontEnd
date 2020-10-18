@@ -2,49 +2,46 @@
 <div class="card my-5">
   <div class="card-body">
     <div class="row">
-    <div class="col-md-5">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th class="align-middle" scope="col">#</th>
-        <th class="align-middle" scope="col">Product name</th>
-        <th class="align-middle" scope="col">Quantity</th>
-        <th class="align-middle" scope="col">Price</th>
-        <th class="align-middle" scope="col">
-          <div class="row d-flex align-items-center"></div>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let orderLine of order.orderLineDtoModels">
-        <td>{{(order.orderLineDtoModels.indexOf(orderLine)+1)}}</td>
-        <td>{{orderLine.productDto.name}}</td>
-        <td>{{orderLine.quantity}} <input type="number" value="1" min="1"> </td>
-        <td>{{orderLine.price}}<span> Lei</span></td>
+      <div class="col-md-5">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+          <tr>
+            <th class="align-middle" scope="col">#</th>
+            <th class="align-middle" scope="col">Product name</th>
+            <th class="align-middle" scope="col">Quantity</th>
+            <th class="align-middle" scope="col">Price</th>
 
-        <td>
-          <div class="btn-group">
-            <button (click)="update(order.username, orderLine.id, orderLine.quantity )" type="button" class="btn btn-danger">Delete</button>
+              <div class="row d-flex align-items-center"></div>
 
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let orderLine of order.orderLineDtoModels">
+            <td>{{(order.orderLineDtoModels.indexOf(orderLine)+1)}}</td>
+            <td>{{orderLine.productDto.name}}</td>
+            <td>{{orderLine.quantity}} <input type="number" value="1" min="1"  [(ngModel)]="orderLine.quantity"
+                                              (change)="changeQuantity(orderLine)"> </td>
+            <td>{{orderLine.price}}<span> Lei</span></td>
 
-          </div>
-        </td>
-      </tr>
+            <td>
+              <div class="btn-group">
+                <button (click)="update(order.username, orderLine.id, 0 )" type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </td>
+          </tr>
 
-      </tbody>
+          </tbody>
 
-    </table>
-    </div>
+        </table>
+      </div>
 
       <div class="col-2 text-center"></div>
-    <div class="col-md-5">
-      <label>Total cost: </label>
-      {{order.totalCost}}
-      <span> Lei</span>
-    </div>
+      <div class="col-md-5">
+        <label>Total cost: </label>
+        {{order.totalCost}}
+        <span> Lei</span>
+      </div>
     </div>
   </div>
 
 </div>
-
-
