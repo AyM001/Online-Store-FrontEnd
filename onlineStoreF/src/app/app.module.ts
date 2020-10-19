@@ -29,7 +29,9 @@ import {CategoryService} from './categories/service/category.service';
 import {ManufacturerServiceService} from './manufacturers/service/manufacturer-service.service';
 
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
-import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule,
     NgMultiSelectDropDownModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
   ],
   providers: [ProductServiceService, UserService, OrderService, ManufacturerServiceService, CategoryService],
   bootstrap: [AppComponent]

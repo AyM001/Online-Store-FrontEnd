@@ -12,6 +12,9 @@ import {Orderline} from '../../model/orderline';
 export class OrderListComponent implements OnInit {
   orders: Order[] = [];
   order: Order = new Order();
+  p = 1;
+  numberOfItemsPerP = 1;
+
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -40,7 +43,7 @@ export class OrderListComponent implements OnInit {
 // tslint:disable-next-line:typedef
   public update(username: string, idOrderLine: number, newQuantity: number) {
     this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
-      this.getOrders();
+       this.getOrders();
      // this.getOrderByUsername('iulia');
     });
 

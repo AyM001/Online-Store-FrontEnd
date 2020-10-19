@@ -14,6 +14,7 @@ export class OrderService {
     return this.http.get<Order[]>('http://localhost:8080/getOrders');
   }
 
+  // tslint:disable-next-line:typedef
   public addOrder(username: string, idProduct: number): Observable<Order>{
     return this.http.get<Order>('http://localhost:8080/addOrder/' + username + '/' + idProduct);
   }
@@ -25,8 +26,8 @@ export class OrderService {
   }
 
   // tslint:disable-next-line:typedef
-  public update(username: string, idOrderLine: number, newQuantity: number ): Observable<Order> {
-    return this.http.get<Order>('http://localhost:8080/updateOrder/' + username + '/' + idOrderLine + '/' + newQuantity);
+  public update(username: string, idOrderLine: number, newQuantity: number ) {
+    return this.http.get('http://localhost:8080/updateOrder/' + username + '/' + idOrderLine + '/' + newQuantity);
   }
 
   public getById(idOrder: number): Observable<any> {
