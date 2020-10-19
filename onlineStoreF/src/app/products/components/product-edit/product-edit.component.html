@@ -23,7 +23,6 @@
             <div [hidden]="price.valid" class="alert alert-danger">Product price is required</div>
 
       <div class="form-group">
-
         <label for="manufacturers">Manufacturers</label>
         <ng-multiselect-dropdown
           [data]="manufacturers"
@@ -35,10 +34,26 @@
           (onSelect)="onItemSelect($event)"
           (onSelectAll)="onSelectAll($event)"
         >
-
         </ng-multiselect-dropdown>
       </div>
       <div [hidden]="" class="alert alert-danger">Manufacturer is required</div>
+
+      <div class="form-group">
+      <label for="categories">Category</label>
+      <ng-multiselect-dropdown
+        [data]="categories"
+        [placeholder]="'Select the Category'"
+        id="categories"
+        [(ngModel)]="selectedCategories"
+        [ngModelOptions]="{standalone: true}"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+      >
+
+      </ng-multiselect-dropdown>
+  </div>
+  <div [hidden]="" class="alert alert-danger">Category is required</div>
 
 
       <div class="btn-group">
