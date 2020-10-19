@@ -18,6 +18,7 @@ export class ProductEditComponent implements OnInit {
   product: Product;
   id: number;
   dropdownSettings: IDropdownSettings = {};
+
   manufacturers: Manufacturer[];
   selectedManufacturers: Manufacturer[];
 
@@ -75,6 +76,8 @@ export class ProductEditComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onSubmit() {
+    this.product.manufacturerDto = this.selectedManufacturers[0];
+    this.product.categoryDto = this.selectedCategories[0];
     this.productService.update(this.product).subscribe(result => this.goToProductList());
   }
 
