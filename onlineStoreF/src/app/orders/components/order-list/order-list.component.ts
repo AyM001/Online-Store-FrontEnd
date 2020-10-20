@@ -10,7 +10,7 @@ import {Orderline} from '../../model/orderline';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Order[] = [];
+  orders: Object = [];
   order: Order = new Order();
   p = 1;
   numberOfItemsPerP = 1;
@@ -43,11 +43,13 @@ export class OrderListComponent implements OnInit {
 // tslint:disable-next-line:typedef
   public update(username: string, idOrderLine: number, newQuantity: number) {
     this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
-       this.getOrders();
-     // this.getOrderByUsername('iulia');
+      this.orders = data;
+      console.log('Stergerea functioneaza');
     });
-
+    // this.getOrders();
+     // this.getOrderByUsername('iulia');
   }
+
   // tslint:disable-next-line:typedef
   changeQuantity(orderLine: Orderline){
     const orderLineId = orderLine.id;

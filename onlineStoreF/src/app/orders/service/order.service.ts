@@ -30,6 +30,11 @@ export class OrderService {
     return this.http.get('http://localhost:8080/updateOrder/' + username + '/' + idOrderLine + '/' + newQuantity);
   }
 
+  // tslint:disable-next-line:typedef
+  public deleteOrderLine(username: string, idOrderLine: number) {
+    return this.http.get('http://localhost:8080/updateOrder/' + username + '/' + idOrderLine );
+  }
+
   public getById(idOrder: number): Observable<any> {
     return this.http.get('http://localhost:8080/getOrderById/' + idOrder);
   }
