@@ -32,7 +32,9 @@ import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { MenuComponent } from './menu/menu/menu.component';
+import { FooterComponent } from './menu/footer/footer.component';
+import { ContentComponent } from './menu/content/content.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ProductListComponent,
     OrderFormComponent,
     CategoryListComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    MenuComponent,
+    FooterComponent,
+    ContentComponent,
   ],
   imports: [
     HttpClientModule,

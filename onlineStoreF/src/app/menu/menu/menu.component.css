@@ -1,0 +1,21 @@
+#a {
+  margin: auto;
+  width: 27%;
+  padding: 10px;
+}
+#nav{
+  width: 100%;
+  background-color: black;
+}
+#button{
+  background-color: black;
+  color: white;
+}
+#button2{
+  background-color: black;
+  color: white;
+}
+#explore{
+  background-color: black;
+  color: white;
+}
