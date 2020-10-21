@@ -7,6 +7,8 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-5">
+        <div div class="card" style="background-color: powderblue; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
+
         <table class="table table-bordered table-striped">
           <thead class="thead-dark">
           <tr>
@@ -22,7 +24,12 @@
           </thead>
           <tbody>
           <tr *ngFor="let orderLine of order.orderLineDtoModels | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
+
+
+
             <td>{{(order.orderLineDtoModels.indexOf(orderLine)+1)}}</td>
+
+
             <td>{{orderLine.productDto.name}}</td>
             <td>{{orderLine.quantity}} <input type="number" value="1" min="1"  [(ngModel)]="orderLine.quantity"
                                               (change)="changeQuantity(orderLine)"> </td>
@@ -30,7 +37,7 @@
 
             <td>
               <div class="btn-group">
-                <button (click)="update(order.username, orderLine.id, 0 )" type="button" class="btn btn-outline-info btn-sm">Remove</button>
+                <button (click)="update(order.username, orderLine.id, 0 )" type="button" class="btn btn-outline-dark btn-sm">Remove</button>
               </div>
             </td>
           </tr>
@@ -38,6 +45,7 @@
           </tbody>
 
         </table>
+        </div>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
       <hr>

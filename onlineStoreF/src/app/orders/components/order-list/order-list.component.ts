@@ -10,10 +10,10 @@ import {Orderline} from '../../model/orderline';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Object = [];
+  orders: Order[] = [];
   order: Order = new Order();
   p = 1;
-  numberOfItemsPerP = 1;
+  numberOfItemsPerP = 2;
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
@@ -43,7 +43,7 @@ export class OrderListComponent implements OnInit {
 // tslint:disable-next-line:typedef
   public update(username: string, idOrderLine: number, newQuantity: number) {
     this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
-      this.orders = data;
+      // this.orders = data;
       console.log('Stergerea functioneaza');
     });
     // this.getOrders();
