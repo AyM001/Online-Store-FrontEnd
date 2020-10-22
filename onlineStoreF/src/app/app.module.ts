@@ -35,6 +35,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MenuComponent } from './menu/menu/menu.component';
 import { FooterComponent } from './menu/footer/footer.component';
 import { ContentComponent } from './menu/content/content.component';
+import { CategoryEditComponent } from './categories/components/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ContentComponent } from './menu/content/content.component';
     MenuComponent,
     FooterComponent,
     ContentComponent,
+    CategoryEditComponent,
   ],
   imports: [
     HttpClientModule,

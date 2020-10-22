@@ -15,6 +15,7 @@ import {ManufacturerFormComponent} from './manufacturers/components/manufacturer
 import {ManufacturerEditComponent} from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 import {CategoryListComponent} from './categories/components/category-list/category-list.component';
 import {CategoryAddComponent} from './categories/components/category-add/category-add.component';
+import {CategoryEditComponent} from './categories/components/category-edit/category-edit.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'getOrders', component: OrderListComponent},
   {path: 'addOrder', component: OrderFormComponent},
   {path: 'getCategories', component: CategoryListComponent},
-  {path: 'addCategory', component: CategoryAddComponent}
+  {path: 'addCategory', component: CategoryAddComponent},
+  {path: 'editCategory/:id', component: CategoryEditComponent},
 ];
 
 
