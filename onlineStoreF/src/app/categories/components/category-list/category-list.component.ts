@@ -9,7 +9,8 @@ import {Category} from '../../model/category';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  categories: Category[];
+  parents: Category[];
+  children: Category[];
   constructor(private categoryService: CategoryService,
               private route: ActivatedRoute,
               private router: Router, ) { }
@@ -20,7 +21,8 @@ export class CategoryListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   getCategories(){
-    this.categoryService.findAll().subscribe(data => { this.categories = data; });
+    this.parents = [];
+    this.categoryService.findAll().subscribe(data => { this.parents = data; });
   }
   // tslint:disable-next-line:typedef
   addCategory() {

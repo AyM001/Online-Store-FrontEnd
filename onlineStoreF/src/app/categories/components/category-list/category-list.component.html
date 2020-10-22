@@ -5,7 +5,7 @@
       <tr>
         <th class="align-middle" scope="col">Id</th>
         <th class="align-middle" scope="col">Name</th>
-        <th class="align-middle" scope="col">Parent</th>
+        <th class="align-middle" scope="col">Children</th>
         <th class="align-middle" scope="col">
           <div class="row d-flex align-items-center">
             <div class="col">
@@ -19,15 +19,18 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let category of categories">
-        <td>{{ category.id }}</td>
-        <td>{{ category.name }}</td>
-        <td>{{ category.children}}</td>
-
+      <tr *ngFor="let parent of parents">
+        <td>{{ parent.id }}</td>
+        <td>{{ parent.name }}</td>
+        <td class = "child" >
+          <div *ngFor="let children of parent.children">
+            {{children.name}}
+          </div>
+        </td>
         <td>
           <div class="btn-group">
-            <button (click)="editCategory(category.id)" class="btn btn-primary mx-1">Edit</button>
-            <button (click)="deleteCategory(category.id)" class="btn btn-danger">Delete</button>
+            <button (click)="editCategory(parent.id)" class="btn btn-primary mx-1">Edit</button>
+            <button (click)="deleteCategory(parent.id)" class="btn btn-danger">Delete</button>
           </div>
         </td>
       </tr>
