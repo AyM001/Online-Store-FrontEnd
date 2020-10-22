@@ -15,6 +15,10 @@ import {ManufacturerFormComponent} from './manufacturers/components/manufacturer
 import {ManufacturerEditComponent} from './manufacturers/components/manufacturer-edit/manufacturer-edit.component';
 import {CategoryListComponent} from './categories/components/category-list/category-list.component';
 import {CategoryAddComponent} from './categories/components/category-add/category-add.component';
+import {HomepageComponent} from './menu/homepage/homepage.component';
+import {UserViewComponent} from './products/components/user-view/user-view.component';
+import {ContactFormComponent} from './menu/contact-form/contact-form.component';
+import {ContactMessageComponent} from './menu/contact-message/contact-message.component';
 
 
 
@@ -31,7 +35,11 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'getOrders', component: OrderListComponent},
   {path: 'addOrder', component: OrderFormComponent},
   {path: 'getCategories', component: CategoryListComponent},
-  {path: 'addCategory', component: CategoryAddComponent}
+  {path: 'addCategory', component: CategoryAddComponent},
+  {path: '', component: HomepageComponent},
+  {path: 'userview', component: UserViewComponent},
+  {path: 'contactForm', component: ContactFormComponent},
+  {path: 'contactMessage', component: ContactMessageComponent},
 ];
 
 

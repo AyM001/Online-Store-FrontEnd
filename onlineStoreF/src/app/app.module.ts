@@ -35,6 +35,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MenuComponent } from './menu/menu/menu.component';
 import { FooterComponent } from './menu/footer/footer.component';
 import { ContentComponent } from './menu/content/content.component';
+import {HomepageComponent} from './menu/homepage/homepage.component';
+import { UserViewComponent } from './products/components/user-view/user-view.component';
+import { ContactFormComponent } from './menu/contact-form/contact-form.component';
+import { ContactMessageComponent } from './menu/contact-message/contact-message.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +61,10 @@ import { ContentComponent } from './menu/content/content.component';
     MenuComponent,
     FooterComponent,
     ContentComponent,
+    HomepageComponent,
+    UserViewComponent,
+    ContactFormComponent,
+    ContactMessageComponent,
   ],
   imports: [
     HttpClientModule,
