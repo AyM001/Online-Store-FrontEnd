@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center;">Shopping cart<i
+<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center; font-family:cursive;">Shopping cart<i
   class="fas fa-shopping-cart"></i></h4></div>
 
 <div class="card my-5" style="background-color: whitesmoke">
@@ -14,8 +14,9 @@
           <table class="table table-bordered table-striped">
             <thead class="thead-dark">
             <tr>
-              <th class="align-middle" scope="col">#</th>
+
               <th class="align-middle" scope="col">Product name</th>
+             <!-- <th class="align-middle" scope="col">Product details</th> -->
               <th class="align-middle" scope="col">Quantity</th>
               <th class="align-middle" scope="col">Price</th>
              <!--  <th class="align-middle" scope="col">Comments</th> --->
@@ -29,18 +30,18 @@
               *ngFor="let orderLine of order.orderLineDtoModels | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
 
 
-              <td ><div style="color: black">{{(order.orderLineDtoModels.indexOf(orderLine) + 1)}}</div></td>
+             <!-- <td ><div style="color: black">{{(order.orderLineDtoModels.indexOf(orderLine) + 1)}}</div></td> -->
 
 
               <td><div style="color: black">{{orderLine.productDto.name}}</div></td>
+             <!-- <td><div style="color: black">{{orderLine.productDto.description}}</div></td> -->
               <td><div style="color: black">{{orderLine.quantity}}
 
 
 
                 <input type="number" style="width: 50px;" value="1" min="0"
-                                                                               [(ngModel)]="orderLine.quantity"
-                       (change)="changeQuantity(orderLine)">Qty</div></td>
-              <td><div style="color: black">{{orderLine.price}}<span> RON</span></div></td>
+                       [(ngModel)]="orderLine.quantity" (change)="changeQuantity(orderLine)">Qty</div></td>
+              <td><div style="color: black">{{orderLine.price}}<span> EUR</span></div></td>
 
             <!--  <td>
                 <div class="btn-group">
@@ -63,7 +64,7 @@
       <div class="col-md-5">
         <div class="card"
              style="width: 480px; height: 105px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
-          <div style="color: whitesmoke"> <label>Total cost: <b> {{order.totalCost}} RON</b></label>
+          <div style="color: whitesmoke;font-family:cursive;"> <label>Total cost: <b> {{order.totalCost}} EUR</b></label>
             <br>
           <label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label>
           </div>

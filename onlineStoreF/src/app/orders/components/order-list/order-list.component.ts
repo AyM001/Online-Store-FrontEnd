@@ -22,7 +22,7 @@ export class OrderListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getOrderByUsername('maria');
+    this.getOrderByUsername('ana');
   }
 
   // tslint:disable-next-line:typedef
@@ -62,7 +62,7 @@ export class OrderListComponent implements OnInit {
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
-    this.update('maria', orderLineId, newQuantity);
+    this.update('ana', orderLineId, newQuantity);
   }
   // tslint:disable-next-line:typedef
   placeOrder(){
