@@ -1,11 +1,10 @@
-import {Address} from "./address";
+import {Address} from './address';
 
 export class User {
   id: number;
-  email: string;
+  username: string;
   password: string;
-  logo: string;
-  channel: string;
+  email: string;
   addressDto: Address;
 }
 
