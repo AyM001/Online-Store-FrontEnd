@@ -14,6 +14,7 @@ export class OrderListComponent implements OnInit {
   order: Order = new Order();
   p = 1;
   numberOfItemsPerP = 2;
+  id: number;
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
@@ -21,7 +22,7 @@ export class OrderListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getOrderByUsername('iulia');
+    this.getOrderByUsername('maria');
   }
 
   // tslint:disable-next-line:typedef
@@ -43,11 +44,17 @@ export class OrderListComponent implements OnInit {
 // tslint:disable-next-line:typedef
   public update(username: string, idOrderLine: number, newQuantity: number) {
     this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
-      // this.orders = data;
+      this.getOrders();
       console.log('Stergerea functioneaza');
     });
-    // this.getOrders();
-     // this.getOrderByUsername('iulia');
+     // this.getOrderByUsername('');
+  }
+  // tslint:disable-next-line:typedef
+  public updateChanged(username: string, idOrderLine: number){
+    this.orderService.update(username, idOrderLine, 0).subscribe(data => {
+      this.getOrderByUsername('ana');
+      console.log('Stergerea functioneaza');
+    });
   }
 
   // tslint:disable-next-line:typedef
@@ -55,6 +62,14 @@ export class OrderListComponent implements OnInit {
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
-    this.update('iulia', orderLineId, newQuantity);
+    this.update('maria', orderLineId, newQuantity);
+  }
+  // tslint:disable-next-line:typedef
+  placeOrder(){
+    this.id = this.route.snapshot.params.id;
+    this.orderService.placeOrder(this.id).subscribe(data => {
+      this.router.navigate(['/getOrders']);
+      console.log('Place order works!');
+    });
   }
 }
