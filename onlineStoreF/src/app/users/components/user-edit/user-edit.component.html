@@ -11,6 +11,18 @@
                required #email="ngModel">
       </div>
       <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="user.password"
+               class="form-control"
+               id="username"
+               name="username"
+               placeholder="Enter your username"
+               required #username="ngModel">
+        <div [hidden]="!username.pristine" class="alert alert-danger">Username is required</div>
+      </div>
+
       <div class="form-group">
         <label for="password">Password</label>
         <input type="text" [(ngModel)]="user.password"
@@ -21,16 +33,10 @@
                required #password="ngModel">
         <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
       </div>
-      <div class="form-group">
-        <label for="logo">Logo</label>
-        <input type="text" [(ngModel)]="user.logo"
-               class="form-control"
-               id="logo"
-               name="logo"
-               placeholder="Enter your logo"
-               required #logo="ngModel">
-        <div [hidden]="!logo.pristine" class="alert alert-danger">Logo is required</div>
-      </div>
+
+
+
+
       <div class="form-group">
         <label for="country">Country</label>
         <input type="text" [(ngModel)]="user.addressDto.country"
@@ -71,16 +77,7 @@
                required #zipCode="ngModel">
         <div [hidden]="!zipCode.pristine" class="alert alert-danger">ZipCode is required</div>
       </div>
-      <div class="form-group">
-        <label for="channel">Channel</label>
-        <input type="text" [(ngModel)]="user.channel"
-               class="form-control"
-               id="channel"
-               name="channel"
-               placeholder="Enter your channel"
-               required #channel="ngModel">
-        <div [hidden]="!channel.pristine" class="alert alert-danger">Channel is required</div>
-      </div>
+
 
       <div class="btn-group">
         <a (click)="goToUserList()"

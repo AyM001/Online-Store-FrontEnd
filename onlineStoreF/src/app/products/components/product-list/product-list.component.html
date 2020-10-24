@@ -1,49 +1,43 @@
-<div class="card my-5">
-  <div class="card-body">
-    <h1>Products</h1>
-    <table class="table table-bordered table-striped">
 
-      <thead class="thead-dark">
-      <tr>
-        <th class="align-middle" scope="col">#Id</th>
-        <th class="align-middle" scope="col">Name</th>
-        <th class="align-middle" scope="col">Price</th>
-        <th class="align-middle" scope="col">Manufacturer</th>
-        <th class="align-middle" scope="col">Category</th>
-        <th>
-          <div class="col">
+<h1 id="products">Products</h1>
+  <div class="col">
             <div class="input-group">
               <input type="text" [(ngModel)]="searchValue" class="form-control">
-          <button (click)="addProduct()" class="btn btn-success">Add+
+          <button (click)="addProduct()" class="btn btn-success">+
           </button>
             </div>
-          </div>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let product of products | filter: searchValue | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
-      <td>{{ (products.indexOf(product)+1)}}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.manufacturerDto.name }}</td>
-        <td>{{ product.categoryDto.name }}</td>
- <td>
+
+    <div class="card">
+      <img src="https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1599566406/636391_ZAFKX_7294_002_100_0000_Light-FakeNot-print-GG-nylon-jacket.jpg" alt="Denim Jeans" style="width:100%">
+      <h1>Gucci Jacket</h1>
+      <p class="price">$1300.0</p>
+      <p>Fake/Not' print GG nylon jacket</p>
+      <p><button>Add to Cart</button></p>
+    </div>
+
+      <div id="div" *ngFor="let product of products | filter: searchValue | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
+        <td>
+   <div class="card">
+     <img src="assets/download.png" style="width:100%">
+     <h1>{{ product.name }}</h1>
+     <p class="price">${{ product.price }}</p>
+     <p>{{ product.manufacturerDto.name }}.</p>
+     <p>{{ product.categoryDto.name }}.</p>
+     <p><button>Add to Cart</button></p>
+     <div class="btn-group">
+       <button id="edit" (click)="editProduct(product.id)" class="btn btn-outline-primary">Edit</button>
+       <button id="delete"(click)="open(content, product.id)" class="btn btn-outline-danger">Delete</button>
+     </div>
+   </div>
 
 
- <div class=" btn-group">
-      <button (click)="editProduct(product.id)" class="btn btn-outline-primary mx-1">Edit</button>
-      <button (click)="open(content, product.id)" class="btn btn-outline-danger">Delete</button>
-
-  </div>
 
   </td>
-  </tr>
-  </tbody>
-  </table>
+  </div>
+
+
 
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
 </div>
 
 <ng-template #content let-modal>

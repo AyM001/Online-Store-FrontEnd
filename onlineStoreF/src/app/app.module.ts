@@ -42,6 +42,7 @@ import {HomepageComponent} from './menu/homepage/homepage.component';
 import { UserViewComponent } from './products/components/user-view/user-view.component';
 import { ContactFormComponent } from './menu/contact-form/contact-form.component';
 import { ContactMessageComponent } from './menu/contact-message/contact-message.component';
+import { LoginComponent } from './users/login/login.component';
 
 
 
@@ -72,6 +73,7 @@ import { ContactMessageComponent } from './menu/contact-message/contact-message.
     UserViewComponent,
     ContactFormComponent,
     ContactMessageComponent,
+    LoginComponent,
 
   ],
   imports: [

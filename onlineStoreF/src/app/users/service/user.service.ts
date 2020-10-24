@@ -35,4 +35,7 @@ export class UserService {
     return this.http.get(`${'http://localhost:8080/getUserById'}/${id}`);
   }
 
+  public getByUsername(username: string): Observable<any>{
+  return this.http.get(`${'http://localhost:8080/getUserByUsername'}/${username}`);
+  }
 }
