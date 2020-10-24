@@ -12,6 +12,17 @@
       </div>
       <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
 
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="user.password"
+               class="form-control"
+               id="username"
+               name="username"
+               placeholder="Enter your username"
+               required #username="ngModel">
+        <div [hidden]="!username.pristine" class="alert alert-danger">Username is required</div>
+      </div>
+
 
       <div class="form-group">
         <label for="password">Password</label>
