@@ -22,6 +22,7 @@ import {ContactFormComponent} from './menu/contact-form/contact-form.component';
 import {ContactMessageComponent} from './menu/contact-message/contact-message.component';
 import {LoginComponent} from './users/login/login.component';
 import {RegistrationMessageComponent} from './menu/registration-message/registration-message.component';
+import {CheckoutFormComponent} from './menu/checkout-form/checkout-form.component';
 
 
 
@@ -49,6 +50,7 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'contactMessage', component: ContactMessageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationMessageComponent},
+  {path: 'checkout', component: CheckoutFormComponent},
 
 ];
 
