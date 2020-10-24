@@ -22,12 +22,12 @@ export class OrderListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getOrderByUsername('ana');
+    this.getOrderByUsername();
   }
 
   // tslint:disable-next-line:typedef
-  getOrderByUsername(username: string) {
-    this.orderService.getByUsername(username).subscribe(data => {
+  getOrderByUsername() {
+    this.orderService.getByUsername().subscribe(data => {
       this.order = data;
     });
   }
@@ -51,8 +51,8 @@ export class OrderListComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   public updateChanged(username: string, idOrderLine: number){
-    this.orderService.update(username, idOrderLine, 0).subscribe(data => {
-      this.getOrderByUsername('ana');
+    this.orderService.update( idOrderLine, 0).subscribe(data => {
+      this.getOrderByUsername();
       console.log('Stergerea functioneaza');
     });
   }
@@ -62,7 +62,9 @@ export class OrderListComponent implements OnInit {
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
-    this.update('ana', orderLineId, newQuantity);
+    this.orderService.update( orderLineId, newQuantity).subscribe( data => {
+      this.getOrderByUsername();
+    });
     this.router.navigate(['/getOrders']);
   }
   // tslint:disable-next-line:typedef
@@ -73,9 +75,9 @@ export class OrderListComponent implements OnInit {
     });
   }
   // tslint:disable-next-line:typedef
- /* emptyCart(){
-     this.id = this.route.snapshot.params.id;
-     this.orderService.delete(this.id).subscribe( data => {
+ /* emptyCart(idOrder: number){
+     this.id = this.route.snapshot.params.id; //il folosesti doar daca ai id in ruta
+     this.orderService.delete(this.idOrder).subscribe( data => {
       this.router.navigate(['/getProducts']);
       console.log('Order deleted');
     });
