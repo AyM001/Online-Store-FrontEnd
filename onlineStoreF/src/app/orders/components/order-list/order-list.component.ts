@@ -42,8 +42,8 @@ export class OrderListComponent implements OnInit {
 
 
 // tslint:disable-next-line:typedef
-  public update(username: string, idOrderLine: number, newQuantity: number) {
-    this.orderService.update(username, idOrderLine, newQuantity).subscribe(data => {
+  public update( idOrderLine: number, newQuantity: number) {
+    this.orderService.update( idOrderLine, newQuantity).subscribe(data => {
       this.getOrders();
       console.log('Stergerea functioneaza');
     });
@@ -62,9 +62,7 @@ export class OrderListComponent implements OnInit {
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
-    this.orderService.update( orderLineId, newQuantity).subscribe( data => {
-      this.getOrderByUsername();
-    });
+    this.update( orderLineId, newQuantity);
     this.router.navigate(['/getOrders']);
   }
   // tslint:disable-next-line:typedef
