@@ -14,7 +14,7 @@ export class OrderListComponent implements OnInit {
   order: Order = new Order();
   p = 1;
   numberOfItemsPerP = 2;
-  id = this.order.id;
+
 
   constructor(private orderService: OrderService,
               private route: ActivatedRoute,
@@ -65,19 +65,18 @@ export class OrderListComponent implements OnInit {
     this.update('maria', orderLineId, newQuantity);
   }
   // tslint:disable-next-line:typedef
-  placeOrder(){
-    this.id = this.route.snapshot.params.id;
-    this.orderService.placeOrder(this.id).subscribe(data => {
+  placeOrder(idOrder: number){
+    this.orderService.placeOrder(idOrder).subscribe(data => {
       this.router.navigate(['']);
       console.log('Place order works!');
     });
   }
   // tslint:disable-next-line:typedef
-  emptyCart(){
-    // this.id = this.route.snapshot.params.id;
-    this.orderService.delete(this.id).subscribe( data => {
+ /* emptyCart(){
+     this.id = this.route.snapshot.params.id;
+     this.orderService.delete(this.id).subscribe( data => {
       this.router.navigate(['/getProducts']);
       console.log('Order deleted');
     });
-  }
+  }*/
 }
