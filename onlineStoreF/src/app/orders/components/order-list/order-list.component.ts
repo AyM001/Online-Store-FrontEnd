@@ -22,7 +22,7 @@ export class OrderListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getOrderByUsername('maria');
+    this.getOrderByUsername('ana');
   }
 
   // tslint:disable-next-line:typedef
@@ -52,7 +52,7 @@ export class OrderListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   public updateChanged(username: string, idOrderLine: number){
     this.orderService.update(username, idOrderLine, 0).subscribe(data => {
-      this.getOrderByUsername('maria');
+      this.getOrderByUsername('ana');
       console.log('Stergerea functioneaza');
     });
   }
@@ -62,7 +62,8 @@ export class OrderListComponent implements OnInit {
     const orderLineId = orderLine.id;
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
-    this.update('maria', orderLineId, newQuantity);
+    this.update('ana', orderLineId, newQuantity);
+    this.router.navigate(['/getOrders']);
   }
   // tslint:disable-next-line:typedef
   placeOrder(idOrder: number){
