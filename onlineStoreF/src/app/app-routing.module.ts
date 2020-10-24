@@ -21,6 +21,7 @@ import {UserViewComponent} from './products/components/user-view/user-view.compo
 import {ContactFormComponent} from './menu/contact-form/contact-form.component';
 import {ContactMessageComponent} from './menu/contact-message/contact-message.component';
 import {LoginComponent} from './users/login/login.component';
+import {RegistrationMessageComponent} from './menu/registration-message/registration-message.component';
 
 
 
@@ -47,6 +48,7 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'contactForm', component: ContactFormComponent},
   {path: 'contactMessage', component: ContactMessageComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationMessageComponent},
 
 ];
 

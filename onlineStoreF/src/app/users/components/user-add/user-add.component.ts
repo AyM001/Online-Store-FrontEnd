@@ -16,7 +16,7 @@ export class UserAddComponent {
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router){
     this.user = new User();
     this.address = new Address();
     this.user.addressDto = this.address;
@@ -24,7 +24,7 @@ export class UserAddComponent {
 
   // tslint:disable-next-line:typedef
   onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.goToUserList());
+    this.userService.save(this.user).subscribe(result => this.router.navigate(['/registration']));
   }
 
   // tslint:disable-next-line:typedef
