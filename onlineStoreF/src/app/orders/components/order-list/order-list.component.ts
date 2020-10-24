@@ -64,6 +64,7 @@ export class OrderListComponent implements OnInit {
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
     this.update( orderLineId, newQuantity);
     this.router.navigate(['/getOrders']);
+    // this.ngOnInit()
   }
   // tslint:disable-next-line:typedef
   placeOrder(idOrder: number){
@@ -80,4 +81,8 @@ export class OrderListComponent implements OnInit {
       console.log('Order deleted');
     });
   }*/
+  // tslint:disable-next-line:typedef
+  goToProducts(){
+    this.router.navigate(['/getProducts']);
+  }
 }
