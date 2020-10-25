@@ -3,6 +3,10 @@ import {Product} from '../../model/product';
 import {ProductServiceService} from '../../service/product-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {OrderService} from '../../../orders/service/order.service';
+import {UserService} from '../../../users/service/user.service';
+import {User} from '../../../users/model/user';
+import {AuthService} from '../../../users/service/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,11 +16,16 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class ProductListComponent implements OnInit {
 
   products: Product[];
+  currentUser: User;
+
   closeResult = '';
   searchValue = '';
   p = 1;
   numberOfItemsPerP = 3;
   constructor(private productService: ProductServiceService,
+              private authService: AuthService,
+              private orderService: OrderService,
+              private userService: UserService,
               private route: ActivatedRoute,
               private modalService: NgbModal,
               private router: Router) { }
@@ -24,6 +33,19 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
   }
+  // tslint:disable-next-line:typedef
+  verify(){
+    this.currentUser = JSON.parse(sessionStorage.getItem(this.authService.USER_DATA_SESSION_ATTRIBUTE_NAME));
+    // @ts-ignore
+    if (this.currentUser === null){
+      return true;
+    }
+    // @ts-ignore
+    if (this.currentUser !== 'admin'){
+      return false;
+    }
+  }
+
 
   // tslint:disable-next-line:typedef
   getProducts() {
@@ -64,5 +86,12 @@ export class ProductListComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  // tslint:disable-next-line:typedef
+  addToCart(id: number) {
+    this.orderService.addOrder(id).subscribe(data => {
+      console.log('addded');
+    } );
   }
 }

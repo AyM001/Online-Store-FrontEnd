@@ -23,6 +23,7 @@ import {ContactMessageComponent} from './menu/contact-message/contact-message.co
 import {LoginComponent} from './users/login/login.component';
 import {RegistrationMessageComponent} from './menu/registration-message/registration-message.component';
 import {CheckoutFormComponent} from './menu/checkout-form/checkout-form.component';
+import {CheckoutMessageComponent} from './menu/checkout-form/checkout-message/checkout-message.component';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes = [{path: 'getProducts', component: ProductListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationMessageComponent},
   {path: 'checkout', component: CheckoutFormComponent},
+  {path: 'checkoutMessage', component: CheckoutMessageComponent},
 
 ];
 
