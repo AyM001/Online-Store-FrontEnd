@@ -80,4 +80,12 @@ export class OrderListComponent implements OnInit {
       console.log('Order deleted');
     });
   }*/
+<<<<<<< HEAD
+  // tslint:disable-next-line:typedef
+  goToProducts(){
+    this.router.navigate(['/getProducts']);}
+  }
+
+=======
 }
+>>>>>>> 1cf7f4408938ce1a4b866715f43738c6a2a1b34a
