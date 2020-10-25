@@ -33,18 +33,13 @@ export class OrderListComponent implements OnInit {
   }
 
 
-  // tslint:disable-next-line:typedef
-  getOrders() {
-    this.orderService.getOrders().subscribe(data => {
-      this.orders = data;
-    });
-  }
+
 
 
 // tslint:disable-next-line:typedef
   public update( idOrderLine: number, newQuantity: number) {
     this.orderService.update( idOrderLine, newQuantity).subscribe(data => {
-      this.getOrders();
+      this.getOrderByUsername();
       console.log('Stergerea functioneaza');
     });
      // this.getOrderByUsername('');
@@ -52,7 +47,6 @@ export class OrderListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   public updateChanged(username: string, idOrderLine: number){
     this.orderService.update( idOrderLine, 0).subscribe(data => {
-      this.getOrderByUsername();
       console.log('Stergerea functioneaza');
     });
   }
@@ -63,7 +57,6 @@ export class OrderListComponent implements OnInit {
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
     this.update( orderLineId, newQuantity);
-    this.router.navigate(['/getOrders']);
   }
   // tslint:disable-next-line:typedef
   placeOrder(idOrder: number){
@@ -80,12 +73,13 @@ export class OrderListComponent implements OnInit {
       console.log('Order deleted');
     });
   }*/
-<<<<<<< HEAD
+
   // tslint:disable-next-line:typedef
   goToProducts(){
-    this.router.navigate(['/getProducts']);}
+    this.router.navigate(['/getProducts']);
+  }
   }
 
-=======
-}
->>>>>>> 1cf7f4408938ce1a4b866715f43738c6a2a1b34a
+
+
+
