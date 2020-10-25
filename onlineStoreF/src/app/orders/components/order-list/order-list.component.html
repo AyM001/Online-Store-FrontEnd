@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center; font-family:cursive;">Shopping cart<i
-  class="fas fa-shopping-cart"></i></h4></div>
+<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center; font-family:cursive;">Shopping cart
+  <i class="fas fa-shopping-cart fa-xs"></i>
+  <i class="fas fa-shopping-cart fa-sm"></i>
+  <i class="fas fa-shopping-cart"></i></h4></div>
 
 <div class="card my-5" style="background-color: whitesmoke">
   <div class="card-body">
@@ -66,7 +68,9 @@
              style="width: 480px; height: 105px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
           <div style="color: whitesmoke;font-family:cursive;"> <label>Total cost: <b> {{order.totalCost}} EUR</b></label>
             <br>
-          <label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label>
+            <div *ngIf="order.orderLineDtoModels.length != 0"><label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label></div>
+            <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div>
+
           </div>
 
           <div class="btn-group" style="margin-left:350px">
