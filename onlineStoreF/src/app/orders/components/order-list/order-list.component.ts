@@ -73,8 +73,6 @@ export class OrderListComponent implements OnInit {
   }*/
   // tslint:disable-next-line:typedef
   goToProducts(){
-    this.router.navigate(['/getProducts']);
-
-  }
+    this.router.navigate(['/getProducts']);}
   }
 
