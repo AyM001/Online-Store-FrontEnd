@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center; font-family:cursive;">Shopping cart<i
-  class="fas fa-shopping-cart"></i></h4></div>
+<div class="align-middle"><h4 style="font-size:40px;color: black;text-align: center; font-family:cursive;">Shopping cart
+  <i class="fas fa-shopping-cart fa-xs"></i>
+  <i class="fas fa-shopping-cart fa-sm"></i>
+  <i class="fas fa-shopping-cart"></i></h4></div>
 
 <div class="card my-5" style="background-color: whitesmoke">
   <div class="card-body">
@@ -10,8 +12,8 @@
       <div class="col-md-5">
         <div  class="card"
              style="background-color: whitesmoke; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
-
-          <table class="table table-bordered table-striped">
+<!--<table mdbTable borderless="true" > un tabel fara margini-->
+          <table class="table table-bordered table-striped"  >
             <thead >
             <tr>
 
@@ -26,6 +28,7 @@
             </tr>
             </thead>
             <tbody >
+
             <tr
               *ngFor="let orderLine of order.orderLineDtoModels | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
 
@@ -63,15 +66,17 @@
 
       <div class="col-md-5">
         <div class="card"
-             style="width: 480px; height: 140px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
+             style="width: 470px; height: 170px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
 
-          <div class="btn-group" style="margin-left:350px;">
+          <div class="btn-group" style="margin-left:350px;margin-right:10px">
             <button (click)="goToProducts()" type="button" class="btn btn btn-light btn-sm ">Back</button>
           </div>
 
           <div style="color: whitesmoke;font-family:cursive;"> <label>Total cost: <b> {{order.totalCost}} EUR</b></label>
             <br>
           <label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label>
+            <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div>
+
           </div>
 
 
@@ -80,8 +85,8 @@
           </div> -->
 
 
-          <div class="btn-group" style="margin-left:350px;">
-            <button (click)="placeOrder(order.id)" type="button" class="btn btn btn-light btn-sm ">Place order</button>
+          <div class="btn-group" style="margin-left:350px; margin-right:10px;">
+            <button (click)="placeOrder(order.id)" type="button" class=" fixed-bottom btn btn btn-light btn-sm ">Place order</button>
           </div>
 
 
