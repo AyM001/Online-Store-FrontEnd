@@ -74,8 +74,8 @@
 
           <div style="color: whitesmoke;font-family:cursive;"> <label>Total cost: <b> {{order.totalCost}} EUR</b></label>
             <br>
-          <label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label>
-          <!--  <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div> -->
+          <div *ngIf="order.orderLineDtoModels.length != 0"><label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label></div>
+          <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div>
 
           </div>
 

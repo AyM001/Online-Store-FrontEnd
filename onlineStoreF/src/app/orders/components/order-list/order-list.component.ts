@@ -10,7 +10,7 @@ import {Orderline} from '../../model/orderline';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Order[] = [];
+
   order: Order = new Order();
   p = 1;
   numberOfItemsPerP = 2;
@@ -31,23 +31,13 @@ export class OrderListComponent implements OnInit {
       this.order = data;
     });
   }
-
-
-  // tslint:disable-next-line:typedef
-  getOrders() {
-    this.orderService.getOrders().subscribe(data => {
-      this.orders = data;
-    });
-  }
-
-
 // tslint:disable-next-line:typedef
   public update( idOrderLine: number, newQuantity: number) {
     this.orderService.update( idOrderLine, newQuantity).subscribe(data => {
-      this.getOrders();
       console.log('Stergerea functioneaza');
+      this.getOrderByUsername();
     });
-     // this.getOrderByUsername('');
+
   }
   // tslint:disable-next-line:typedef
   public updateChanged(username: string, idOrderLine: number){
@@ -63,7 +53,6 @@ export class OrderListComponent implements OnInit {
     const newQuantity = orderLine.quantity;
     console.log('Change order with id ' + orderLineId + ' with quantity ' + newQuantity);
     this.update( orderLineId, newQuantity);
-    this.getOrderByUsername();
     // this.router.navigate(['/getOrders']);
     // this.ngOnInit()
   }
@@ -85,6 +74,7 @@ export class OrderListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   goToProducts(){
     this.router.navigate(['/getProducts']);
+
   }
   }
 
