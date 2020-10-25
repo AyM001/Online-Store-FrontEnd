@@ -46,6 +46,7 @@ import { LoginComponent } from './users/login/login.component';
 import { RegistrationMessageComponent } from './menu/registration-message/registration-message.component';
 import {HttpInterceptorService} from './users/service/http-interceptor.service';
 import { CheckoutFormComponent } from './menu/checkout-form/checkout-form.component';
+import { CheckoutMessageComponent } from './menu/checkout-form/checkout-message/checkout-message.component';
 
 
 
@@ -79,6 +80,7 @@ import { CheckoutFormComponent } from './menu/checkout-form/checkout-form.compon
     LoginComponent,
     RegistrationMessageComponent,
     CheckoutFormComponent,
+    CheckoutMessageComponent,
 
   ],
   imports: [

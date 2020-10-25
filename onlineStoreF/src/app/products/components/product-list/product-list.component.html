@@ -1,4 +1,6 @@
-
+<div style="position: relative">
+<app-order-list></app-order-list>
+</div>
 <h1 id="products">Products</h1>
   <div class="col">
             <div class="input-group">
@@ -12,7 +14,7 @@
       <h1>Gucci Jacket</h1>
       <p class="price">$1300.0</p>
       <p>Fake/Not' print GG nylon jacket</p>
-      <p><button>Add to Cart</button></p>
+      <p><button>Sold Out!</button></p>
     </div>
 
       <div id="div" *ngFor="let product of products | filter: searchValue | paginate : {itemsPerPage: numberOfItemsPerP, currentPage: p}">
@@ -23,8 +25,8 @@
      <p class="price">${{ product.price }}</p>
      <p>{{ product.manufacturerDto.name }}.</p>
      <p>{{ product.categoryDto.name }}.</p>
-     <p><button>Add to Cart</button></p>
-     <div class="btn-group">
+     <p><button (click)="addToCart(product.id)">Add to Cart</button></p>
+     <div *ngIf="verify()" class="btn-group">
        <button id="edit" (click)="editProduct(product.id)" class="btn btn-outline-primary">Edit</button>
        <button id="delete"(click)="open(content, product.id)" class="btn btn-outline-danger">Delete</button>
      </div>

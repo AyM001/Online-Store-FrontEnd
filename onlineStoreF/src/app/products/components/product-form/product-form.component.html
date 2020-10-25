@@ -1,6 +1,7 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="product.name"
