@@ -29,6 +29,9 @@ export class OrderListComponent implements OnInit {
   getOrderByUsername() {
     this.orderService.getByUsername().subscribe(data => {
       this.order = data;
+      if (this.order == null){
+        this.order = new Order();
+      }
     });
   }
 
@@ -80,12 +83,8 @@ export class OrderListComponent implements OnInit {
       console.log('Order deleted');
     });
   }*/
-<<<<<<< HEAD
   // tslint:disable-next-line:typedef
   goToProducts(){
-    this.router.navigate(['/getProducts']);}
+    this.router.navigate(['/getProducts']);
   }
-
-=======
 }
->>>>>>> 1cf7f4408938ce1a4b866715f43738c6a2a1b34a
