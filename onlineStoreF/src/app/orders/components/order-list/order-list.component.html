@@ -66,7 +66,7 @@
 
       <div class="col-md-5">
         <div class="card"
-             style="width: 470px; height: 170px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
+             style="width: 470px; height: 140px; background-color: black; box-sizing: border-box;text-align: center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 5px;">
 
           <div class="btn-group" style="margin-left:350px;margin-right:10px">
             <button (click)="goToProducts()" type="button" class="btn btn btn-light btn-sm ">Back</button>
@@ -75,7 +75,7 @@
           <div style="color: whitesmoke;font-family:cursive;"> <label>Total cost: <b> {{order.totalCost}} EUR</b></label>
             <br>
           <label>Number of items: <b>{{order.orderLineDtoModels.length}}</b></label>
-            <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div>
+          <!--  <div *ngIf="order.orderLineDtoModels.length==0"><label>Cart is empty</label></div> -->
 
           </div>
 
