@@ -37,12 +37,12 @@ export class ProductListComponent implements OnInit {
   verify(){
     this.currentUser = JSON.parse(sessionStorage.getItem(this.authService.USER_DATA_SESSION_ATTRIBUTE_NAME));
     // @ts-ignore
-    if (this.currentUser === null){
-      return true;
+    if (this.currentUser.userRoleDto === 'ADMIN'){
+      return false;
     }
     // @ts-ignore
-    if (this.currentUser !== 'admin'){
-      return false;
+    if (this.currentUser.userRoleDto === 'USER'){
+      return true;
     }
   }
 
