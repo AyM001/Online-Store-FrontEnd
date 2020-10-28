@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Product} from '../../model/product';
 import {ProductServiceService} from '../../service/product-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -7,6 +7,7 @@ import {OrderService} from '../../../orders/service/order.service';
 import {UserService} from '../../../users/service/user.service';
 import {User} from '../../../users/model/user';
 import {AuthService} from '../../../users/service/auth.service';
+import {OrderListComponent} from '../../../orders/components/order-list/order-list.component';
 
 @Component({
   selector: 'app-product-list',
@@ -22,6 +23,9 @@ export class ProductListComponent implements OnInit {
   searchValue = '';
   p = 1;
   numberOfItemsPerP = 3;
+
+  @ViewChild(OrderListComponent) orderList: OrderListComponent;
+
   constructor(private productService: ProductServiceService,
               private authService: AuthService,
               private orderService: OrderService,
@@ -38,11 +42,11 @@ export class ProductListComponent implements OnInit {
     this.currentUser = JSON.parse(sessionStorage.getItem(this.authService.USER_DATA_SESSION_ATTRIBUTE_NAME));
     // @ts-ignore
     if (this.currentUser.userRoleDto === 'ADMIN'){
-      return false;
+      return true;
     }
     // @ts-ignore
     if (this.currentUser.userRoleDto === 'USER'){
-      return true;
+      return false;
     }
   }
 
@@ -92,6 +96,7 @@ export class ProductListComponent implements OnInit {
   addToCart(id: number) {
     this.orderService.addOrder(id).subscribe(data => {
       console.log('addded');
+      this.orderList.ngOnInit();
     } );
   }
 }
