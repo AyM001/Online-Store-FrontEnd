@@ -61,7 +61,7 @@ export class OrderListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   placeOrder(idOrder: number){
     this.orderService.placeOrder(idOrder).subscribe(data => {
-      this.router.navigate(['']);
+      this.router.navigate(['/checkout']); // de pus path-ul de checkout si de sters a href din html
       console.log('Place order works!');
     });
   }
