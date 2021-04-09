@@ -13,4 +13,4 @@ UI for online clothes stores.
 - payment method
 
 
-ANGULAR 
+ANGULAR , HTML , CSS
